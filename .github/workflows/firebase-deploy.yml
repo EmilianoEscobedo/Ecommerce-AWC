@@ -17,4 +17,4 @@ jobs:
           args: deploy --only hosting:awc-ecommerce
         env:
           PROJECT_ID: "awc-ecommerce"
-          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_AWC_ECOMMERC }}
+          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_AWC_ECOMMERCE }}
