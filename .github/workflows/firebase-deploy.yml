@@ -1,0 +1,31 @@
+name: Deploy to Firebase Hosting
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: 'Deploy to Firebase Hosting'
+        required: true
+        default: 'true'
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.branch }}
+
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting:awc-ecommerce
+        env:
+          PROJECT_ID: "awc-ecommerce"
+          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_AWC_ECOMMERC }}
