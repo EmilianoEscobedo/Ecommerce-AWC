@@ -1,6 +1,7 @@
 import { fetchProducts } from './api.js';
 import { createProductCard } from './card.js';
 import { initializeCartSidebar } from './cart.js';
+import { showErrorToast } from './toast.js';
 
 const init = async () => {
   const loadingContainer = document.getElementById('loading-container');
@@ -18,6 +19,7 @@ const init = async () => {
     loadingContainer.classList.add('d-none');
     productContainer.classList.remove('d-none');
   } catch (error) {
+    showErrorToast("Ocurrio un error al cargar los productos");
     console.error('Error loading products:', error);
   }
 };
