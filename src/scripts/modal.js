@@ -27,7 +27,7 @@ export const openProductModal = (product) => {
     const addToCartBtn = document.getElementById('addToCartBtn');
     addToCartBtn.addEventListener('click', () => {
       // Cart logic can go here
-      alert(`"${product.title}" was added to your cart 🛒`);
+      alert(`"${product.title}" fue agregado al carrito 🛒`);
     });
   }, 0);
 
