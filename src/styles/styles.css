@@ -28,3 +28,9 @@ body {
 .card-text {
     font-size: 0.9rem;
 }
+
+.product-card__image {
+    height: 200px;
+    object-fit: contain;
+  }
+  

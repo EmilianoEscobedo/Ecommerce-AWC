@@ -5,13 +5,13 @@ export const createProductCard = (product) => {
   col.className = 'col-12 col-sm-6 col-md-4 col-lg-3 mb-4';
 
   const card = document.createElement('div');
-  card.className = 'card h-100 shadow-sm';
+  card.className = 'card product-card h-100 shadow-sm';
 
   card.innerHTML = `
-    <img src="${product.image}" class="card-img-top p-3" alt="${product.title}" style="height: 200px; object-fit: contain;">
-    <div class="card-body d-flex flex-column">
-      <h6 class="card-title">${product.title}</h6>
-      <button class="btn btn-primary mt-auto">Ver más</button>
+    <img src="${product.image}" class="product-card__image card-img-top p-3" alt="${product.title}">
+    <div class="product-card__body card-body d-flex flex-column">
+      <h6 class="product-card__title card-title">${product.title}</h6>
+      <button class="product-card__button btn btn-primary mt-auto">Ver más</button>
     </div>
   `;
 
