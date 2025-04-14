@@ -1,3 +1,5 @@
+import { showAddToCartToast } from './toast.js';
+
 export const openProductModal = (product) => {
   const modalContainer = document.getElementById('productModal');
   const modalTitle = modalContainer.querySelector('.modal-title');
@@ -27,7 +29,7 @@ export const openProductModal = (product) => {
     const addToCartBtn = document.getElementById('addToCartBtn');
     addToCartBtn.addEventListener('click', () => {
       // Cart logic can go here
-      alert(`"${product.title}" was added to your cart 🛒`);
+      showAddToCartToast(product.title);
     });
   }, 0);
 
